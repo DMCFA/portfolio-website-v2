@@ -15,33 +15,48 @@ $font-variant: small-caps;
 }
 
 html {
-  font-family: $font;
+  min-height: 100vh;
 }
 
 body {
+  max-height: 100vh;
   background-color: $background-color;
   background-image: linear-gradient(62deg, #8ec5fc 0%, #e0c3fc 100%);
+  font-family: $font;
 }
 
 /*Home Page*/
 
 .main-section {
-  min-height: 100vh;
+  height: 80%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-block-end: 3em;
+  margin-top: 8%;
+
+  @media screen and (max-width: $tablet) {
+    margin-top: 5%;
+  }
 
   .links {
     color: $font-color;
+    padding: 1rem;
     font-size: 4.5rem;
     font-weight: 700;
     font-variant: $font-variant;
     text-decoration: none;
-    padding-block: 1em;
-    margin-right: 2em;
-    transform: rotate(-45deg) !important;
+    text-align: center;
+  }
+
+  .links:first-child {
+    padding-inline-start: 0;
+  }
+
+  .links:last-child {
+    padding-bottom: 0;
+    margin-inline-start: 0.5rem;
   }
 
   .links:hover {
@@ -60,8 +75,8 @@ body {
     text-shadow: none;
   }
   100% {
-    -webkit-transform: translateY(-50px);
-    transform: translateY(-50px);
+    -webkit-transform: translateY(-1rem);
+    transform: translateY(-1rem);
     -webkit-transform-origin: 50% 50%;
     transform-origin: 50% 50%;
     text-shadow: 0 1px 0 #cccccc, 0 2px 0 #cccccc, 0 3px 0 #cccccc,
@@ -78,8 +93,8 @@ body {
     text-shadow: none;
   }
   100% {
-    -webkit-transform: translateY(-50px);
-    transform: translateY(-50px);
+    -webkit-transform: translateY(-1rem);
+    transform: translateY(-1rem);
     -webkit-transform-origin: 50% 50%;
     transform-origin: 50% 50%;
     text-shadow: 0 1px 0 #cccccc, 0 2px 0 #cccccc, 0 3px 0 #cccccc,
