@@ -25,24 +25,38 @@ body {
   font-family: $font;
 }
 
+@mixin flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 @mixin homeBtn {
   width: 5rem;
   height: 5rem;
+  @media screen and (max-width: $tablet) {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+@mixin homeBtnAnchor {
+  margin-inline-end: auto;
+  padding-inline-start: 1rem;
+  padding-block-start: 0.5rem;
 }
 
 /*Home Page*/
 
 .main-section {
+  @include flex;
   height: 80%;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   margin-top: 8%;
 
   @media screen and (max-width: $tablet) {
-    margin-top: 30%;
+    margin-top: 20%;
   }
 
   .links {
@@ -122,18 +136,11 @@ body {
   align-items: center;
 
   a {
-    margin-inline-end: auto;
-    padding-inline-start: 1rem;
-    padding-block-start: 0.5rem;
+    @include homeBtnAnchor;
   }
 
   img {
     @include homeBtn;
-
-    @media screen and (max-width: $tablet) {
-      width: 3rem;
-      height: 3rem;
-    }
   }
 }
 
@@ -191,6 +198,30 @@ body {
       letter-spacing: 0.05rem;
       line-height: 1.5rem;
     }
+  }
+}
+
+/*Success*/
+
+.success-container {
+  min-height: 100vh;
+  background: url(/img/thank-you.jpg) no-repeat center center fixed;
+  background-size: cover;
+
+  @media screen and (max-width: $tablet) {
+    background: url(/img/thank-you-tablet.png) no-repeat top center fixed;
+  }
+
+  @media screen and (max-width: $phone) {
+    background: url(/img/thank-you-mobile.png) no-repeat center fixed;
+  }
+
+  a {
+    @include homeBtnAnchor;
+  }
+
+  img {
+    @include homeBtn;
   }
 }
 
