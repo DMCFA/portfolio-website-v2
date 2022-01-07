@@ -25,6 +25,8 @@ body {
   font-family: $font;
 }
 
+/*Mix-in's*/
+
 @mixin flex {
   display: flex;
   flex-direction: column;
@@ -48,6 +50,13 @@ body {
 }
 
 /*Home Page*/
+
+#home {
+  background-color: $background-color;
+  background: linear-gradient(-45deg, #d77fa1, #fff9f9, #baabda, #d6e5fa);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
 
 .main-section {
   @include flex;
@@ -89,6 +98,19 @@ body {
 }
 
 /* Homepage text animation */
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 @-webkit-keyframes links {
   0% {
     -webkit-transform: translateY(0);
