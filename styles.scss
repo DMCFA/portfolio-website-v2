@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
 
 /* Global Variables */
 $phone: 640px;
@@ -8,6 +9,7 @@ $font: 'Roboto', sans-serif;
 $font-color: #1a374d;
 $font-light-color: #c8e3d4;
 $font-variant: small-caps;
+$card-font: 'Rubik', sans-serif;
 
 *,
 *::before,
@@ -96,8 +98,6 @@ body {
     animation: links 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
   }
 }
-
-/* Homepage text animation */
 
 @keyframes gradient {
   0% {
@@ -375,5 +375,148 @@ form {
       margin-block-start: 0;
       border-radius: 10%;
     }
+  }
+}
+
+/*Projects*/
+
+#projects {
+  background-color: #8ec5fc;
+  background-image: linear-gradient(62deg, #8ec5fc 0%, #e0c3fc 100%);
+}
+
+.projects-container {
+  height: 100vh;
+  width: 100%;
+
+  a {
+    @include home-button-anchor;
+  }
+
+  img {
+    @include home-button;
+  }
+
+  .projects-header {
+    height: 20%;
+    width: 100%;
+
+    h2 {
+      color: $font-color;
+      font-size: 2.8rem;
+      font-variant: $font-variant;
+      margin-block-end: 2rem;
+      letter-spacing: 0.2rem;
+      text-align: center;
+      text-shadow: 1px 0px 1px #cccccc, 0px 1px 1px $font-light-color,
+        2px 1px 1px #cccccc, 1px 2px 1px $font-light-color, 3px 2px 1px #cccccc,
+        2px 3px 1px $font-light-color, 4px 3px 1px #cccccc,
+        3px 4px 1px $font-light-color, 5px 4px 1px #cccccc,
+        4px 5px 1px $font-light-color, 6px 5px 1px #cccccc,
+        5px 6px 1px $font-light-color, 7px 6px 1px #cccccc;
+    }
+  }
+}
+
+.cards-container {
+  height: 60%;
+  width: 100%;
+  display: flex;
+  margin-block-start: 2rem;
+  justify-content: space-around;
+  font-family: $card-font;
+
+  @media screen and (max-width: 1250px) {
+  }
+
+  @media screen and (max-width: $tablet) {
+    @include flex;
+  }
+
+  @media screen and (max-width: $phone) {
+  }
+}
+
+.card {
+  display: flex;
+  background-color: #ffdee9;
+  background-image: linear-gradient(0deg, #ffdee9 0%, #b5fffc 100%);
+  padding: 1rem;
+  width: 22%;
+  text-align: center;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1),
+    0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1),
+    0 16px 16px rgba(0, 0, 0, 0.1);
+
+  @media screen and (max-width: $phone) {
+    height: 350px;
+  }
+}
+
+.card:last-child {
+  margin-inline-end: 2rem;
+}
+
+.content {
+  @include flex;
+  width: 100%;
+  padding: 1rem;
+}
+
+.content:hover {
+  .title {
+    font-size: 1.8rem;
+    padding-block-end: 1rem;
+  }
+  .hidden-content {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.title {
+  font: $font-variant 500 2rem $card-font;
+  color: $font-color;
+}
+
+.hidden-content {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 1s, opacity 1s linear;
+}
+
+.description {
+  font: $font-variant 1.2rem $card-font;
+  line-height: 1.35;
+  padding-block-end: 2.5rem;
+}
+
+.source-code,
+.demo {
+  cursor: pointer;
+  text-decoration: none;
+  font: $font-variant 500 1.1rem $card-font;
+  letter-spacing: 0.025rem;
+  text-align: center;
+  padding: 0.75rem 1rem;
+  color: #fff;
+  background-color: $font-color;
+  border: none;
+
+  @media screen and (max-width: 1250px) {
+    display: block;
+    padding-inline: 0 !important;
+  }
+}
+
+.demo {
+  margin-inline-start: 1.125rem;
+
+  @media screen and (max-width: 1250px) {
+    margin-block-start: 1rem;
+    margin-inline-end: 0 !important;
+    margin-inline: auto;
   }
 }
