@@ -45,6 +45,7 @@ body {
   @media screen and (max-width: $tablet) {
     width: 3rem;
     height: 3rem;
+    margin-block-start: 1rem;
   }
 }
 
@@ -405,6 +406,7 @@ form {
       color: $font-color;
       font-size: 2.8rem;
       font-variant: $font-variant;
+      margin-block-start: 3rem;
       margin-block-end: 2rem;
       letter-spacing: 0.2rem;
       text-align: center;
@@ -420,20 +422,18 @@ form {
 
 .cards-container {
   height: 60%;
-  width: 100%;
+  width: 95%;
   display: flex;
   margin-block-start: 2rem;
+  margin-inline-start: 3rem;
   justify-content: space-around;
   font-family: $card-font;
 
   @media screen and (max-width: 1250px) {
-  }
-
-  @media screen and (max-width: $tablet) {
-    @include flex;
-  }
-
-  @media screen and (max-width: $phone) {
+    height: auto;
+    min-height: 40%;
+    margin-block-start: 4rem;
+    margin-inline-start: 2rem;
   }
 }
 
@@ -447,10 +447,6 @@ form {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 2px 2px rgba(0, 0, 0, 0.1),
     0 4px 4px rgba(0, 0, 0, 0.1), 0 8px 8px rgba(0, 0, 0, 0.1),
     0 16px 16px rgba(0, 0, 0, 0.1);
-
-  @media screen and (max-width: $phone) {
-    height: 350px;
-  }
 }
 
 .card:last-child {
@@ -463,7 +459,8 @@ form {
   padding: 1rem;
 }
 
-.content:hover {
+.content:hover,
+.content:active {
   .title {
     font-size: 1.8rem;
     padding-block-end: 1rem;
@@ -518,5 +515,55 @@ form {
     margin-block-start: 1rem;
     margin-inline-end: 0 !important;
     margin-inline: auto;
+  }
+}
+
+@media screen and (max-width: $tablet) {
+  .projects-container .projects-header h2 {
+    font-size: 2.5rem;
+
+    @media screen and (max-width: $phone) {
+      font-size: 2.1rem;
+    }
+  }
+
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 1rem;
+    margin-block: 1rem;
+
+    @media screen and (max-width: $phone) {
+      grid-template-columns: repeat(1, 1fr);
+      row-gap: 2.2rem;
+    }
+  }
+
+  .card {
+    height: fit-content;
+    width: 85%;
+  }
+
+  .card:last-child {
+    margin-inline-end: 0;
+  }
+}
+
+@media screen and (max-width: $phone) {
+  .hidden-content .title {
+    font-size: 1.2rem;
+  }
+
+  .description {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .source-code,
+  .demo {
+    display: inline-block;
+    margin-inline: 1rem;
+    padding: 1rem 1rem !important;
   }
 }
