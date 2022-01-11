@@ -19,6 +19,11 @@ $card-font: 'Rubik', sans-serif;
   box-sizing: border-box;
 }
 
+html,
+body {
+  overflow: hidden;
+}
+
 html {
   min-height: 100vh;
 }
