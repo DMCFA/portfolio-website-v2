@@ -421,6 +421,10 @@ form {
         3px 4px 1px $font-light-color, 5px 4px 1px #cccccc,
         4px 5px 1px $font-light-color, 6px 5px 1px #cccccc,
         5px 6px 1px $font-light-color, 7px 6px 1px #cccccc;
+
+      @media screen and (min-width: 1150px) {
+        margin-block-end: 11rem;
+      }
     }
   }
 }
@@ -434,7 +438,7 @@ form {
   justify-content: space-around;
   font-family: $card-font;
 
-  @media screen and (max-width: 1250px) {
+  @media screen and (max-width: 1149px) {
     height: auto;
     min-height: 40%;
     margin-block-start: 4rem;
